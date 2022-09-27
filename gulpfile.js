@@ -44,4 +44,4 @@ gulp.task('babelTest', async function () {
 gulp.task('build', gulp.series('babelTest'));
 
 
-  
+//Need to set up Gulp watch to update itself whenever any changes are made to the javascript or sass folder in my project

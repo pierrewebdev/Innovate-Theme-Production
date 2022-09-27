@@ -4,8 +4,7 @@
   "description": "A shopify theme for dropshippers that sell electronics online and have big product inventories",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "babelTest": "gulp babelTest"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Code That Converts",
   "license": "ISC",
