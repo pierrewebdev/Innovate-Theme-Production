@@ -1,5 +1,3 @@
-//run gulp
-
 var gulp = require('gulp');
 var babel = require('gulp-babel')
 var sass = require('gulp-sass')(require('sass'));
@@ -11,23 +9,15 @@ var rename = require('gulp-rename');
 //Next two Gulp Tasks have to do with converting Sass to CSS
 gulp.task('sass', function() {
 //root scss file (import all your partials into here)
-return gulp.src('./src/sass/styles.scss')
+return gulp.src('./src/sass/theme.scss')
     .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
     // add vendor prefixes
-    .pipe(autoprefixer())
-    // change the file name to be styles.scss.liquid file
-    .pipe(rename('styles.css'))
+    // .pipe(autoprefixer())
     // remove the extra set of quotations used for escaping the liquid string (we'll explain this in a sec)
     // .pipe(replace('"{{', '{{'))
     // .pipe(replace('}}"', '}}'))
     // save the file to the theme assets directory
     .pipe(gulp.dest('./src/assets/'));
-});
-
-
-gulp.task('default', function() {
-    // this assumes your sass is in a directory named sass
-    gulp.watch(['./src/sass/**/*.scss', './src/javascript/**/*.js'], gulp.series(['sass', 'babelConvert']));
 });
 
 // =========================================================  //
@@ -49,7 +39,10 @@ gulp.task("theme-dist", async function(){
 })
 
 
-gulp.task('build', gulp.series('theme-dist'));
+//run all tasks as soon as gulp is used in terminal
 
+gulp.task('default', function() {
+    // this assumes your sass is in a directory named sass
+    gulp.watch(['./src/sass/**/*.scss', './src/javascript/**/*.js'], gulp.series(['sass', 'babelConvert', 'theme-dist']));
+});
 
-//Need to set up Gulp watch to update itself whenever any changes are made to the javascript or sass folder in my project
