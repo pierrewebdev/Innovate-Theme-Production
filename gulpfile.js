@@ -3,7 +3,8 @@ var babel = require('gulp-babel')
 var sass = require('gulp-sass')(require('sass'));
 var replace = require('gulp-replace');
 var autoprefixer = require('gulp-autoprefixer');
-var rename = require('gulp-rename');	
+var rename = require('gulp-rename');
+var purgecss = requiure('gulp-purgecss')	
 
 // =========================================================  //
 //Next two Gulp Tasks have to do with converting Sass to CSS
@@ -17,6 +18,7 @@ return gulp.src('./src/sass/theme.scss')
     // .pipe(replace('"{{', '{{'))
     // .pipe(replace('}}"', '}}'))
     // save the file to the theme assets directory
+    .pipe(purgecss({content: ["*.html"]}))
     .pipe(gulp.dest('./src/assets/'));
 });
 
