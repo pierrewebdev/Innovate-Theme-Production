@@ -4,13 +4,10 @@ $breakpoints: (
     "md": 720px,
     "lg": 960px,
     "xl": 1260px
-)
+);
 
-//Creates a mixin that I can use throughout the theme for media queries
-@each $key, $val in $breakpoints{
-    @mixin breakpoint_#{$key}{
-        @media(min-width: map-get($breakpoints, #{key})){
-            @content
-        }
+@mixin breakpoint($breakpoint){
+    @media(min-width: map-get($breakpoints, #{$breakpoint})){
+        @content;
     }
 }

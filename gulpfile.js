@@ -4,21 +4,16 @@ var sass = require('gulp-sass')(require('sass'));
 var replace = require('gulp-replace');
 var autoprefixer = require('gulp-autoprefixer');
 var rename = require('gulp-rename');
-var purgecss = requiure('gulp-purgecss')	
+var purgecss = require('gulp-purgecss')	
 
 // =========================================================  //
 //Next two Gulp Tasks have to do with converting Sass to CSS
-gulp.task('sass', function() {
+gulp.task('buildStyles', function() {
 //root scss file (import all your partials into here)
 return gulp.src('./src/sass/theme.scss')
-    .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
-    // add vendor prefixes
-    // .pipe(autoprefixer())
-    // remove the extra set of quotations used for escaping the liquid string (we'll explain this in a sec)
-    // .pipe(replace('"{{', '{{'))
-    // .pipe(replace('}}"', '}}'))
+    .pipe(sass().on('error', sass.logError))
     // save the file to the theme assets directory
-    .pipe(purgecss({content: ["*.html"]}))
+    // .pipe(purgecss({content: ["*.html"]}))
     .pipe(gulp.dest('./src/assets/'));
 });
 
@@ -45,6 +40,6 @@ gulp.task("theme-dist", async function(){
 
 gulp.task('default', function() {
     // this assumes your sass is in a directory named sass
-    gulp.watch(['./src/sass/**/*.scss', './src/javascript/**/*.js'], gulp.series(['sass', 'babelConvert', 'theme-dist']));
+    gulp.watch(['./src/sass/**/*.scss', './src/javascript/**/*.js'], gulp.series(['buildStyles', 'babelConvert', 'theme-dist']));
 });
 

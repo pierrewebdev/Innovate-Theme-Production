@@ -1,51 +1,48 @@
-$columns: 12;
-$gap: 30px;
-$breakpoints: (
-    xs: 480px,
-    sm: 768px,
-    md: 960px,
-    lg: 1170px,
-    xl: 1280px
+@use "sass:math";
+$grid-columns: 12;
+
+//base layout classes
+.container{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.row{
+    display: flex;
+    flex-flow: row wrap;
+}
+
+//col classes generated for each screen size
+//ex: col-xs-12 will take up 12 columns of space on an xs screen 
+@each $key, $val in $breakpoints{
+    @include breakpoint($key){
+        @for $i from 1 through $grid-columns{
+            .col-#{$key}-#{$i}{
+                box-sizing: border-box;
+                flex-grow: 0;
+                width: math.div($i * 100%, $grid-columns);
+            }
+        }
+    }
+}
+
+//grid gaps
+$grid-gaps: (
+    "0": 0,
+    "1": 10px,
+    "2": 20px
 );
 
-@mixin create-selectors($breakpoint: null) {
-    $infix: if($breakpoint == null, '', '-#{$breakpoint}');
+@each $key, $val in $grid-gaps{
+    .gap-#{$key} *{
+        padding: $val;
+    }
 
-    @for $i from 1 through $columns {
-        .col#{$infix}-#{$i} {
-            grid-column-end: span $i;
-        }
-        .col-offset#{$infix}-#{$i} {
-            grid-column-start: $i + 1;
-        }
-        .row#{$infix}-#{$i} {
-            grid-row-end: span $i;
-        }
-        .row-offset#{$infix}-#{$i} {
-            grid-row-start: $i + 1;
-        }
+    .gap-#{$key}{
+        margin-left: -$val;
+        margin-right: -$val
     }
 }
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat($columns, 1fr);
-    grid-gap: $gap;
-    gap: $gap;
-}
-
-@include create-selectors;
-
-@each $breakpoint, $width in $breakpoints {
-    @media (min-width: $width) {
-        @include create-selectors($breakpoint);
-    }
-}
-
-@media (max-width: 400px) {
-    .grid {
-        grid-gap: 20px;
-        gap: 20px;
-    }
-}
-

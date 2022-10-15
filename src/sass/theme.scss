@@ -1,2 +1,16 @@
-//All Sass partials for theme will be included here
-//example: _grid
+//Google Font
+//use font family like this --> font-family: 'Poppins', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&display=swap');
+
+//variables & functions
+@import "variables";
+
+//basee & layout
+@import "breakpoints";
+@import "grid";
+
+//colors
+
+//components
+
+//utilities -- ex: margin, padding, etc

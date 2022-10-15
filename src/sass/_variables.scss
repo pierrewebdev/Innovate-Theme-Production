@@ -1,0 +1,27 @@
+//Theme Colors
+$deep_blue: #001e42;
+$white: #ffffff;
+$black: #141414;
+$review_yellow: #ffce00;
+$review_gray: #b3b3b3;
+$verified_gray: #4d4d4d;
+$light-gray: #999999;
+
+
+//spacing
+$base-padding: 0.75rem;
+$base-margin: 0.75rem;
+
+//borders
+$base-border-thickness: 1px;
+$base-border-radius: 20px;
+
+//box-shadow
+$base-box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
+
+//fonts and font size
+$base-font-size: 1rem;
+$font-size-sm: $base-font-size * 0.75;
+$font-size-lg: $base-font-size * 1.5;
+$font-size-xl: $base-font-size * 2;
+$font-size-xxl: $base-font-size * 3;
