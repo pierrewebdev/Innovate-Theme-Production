@@ -348,3 +348,76 @@
   margin-left: -20px;
   margin-right: -20px;
 }
+
+desktop-btn {
+  max-width: 164px;
+  max-height: 53px;
+  border-radius: 20px;
+  border-thickness: 1px;
+  bg-color: #001e42;
+  text-color: #ffffff;
+}
+
+desktop_inverted-btn {
+  max-width: 164px;
+  max-height: 53px;
+  border-radius: 20px;
+  border-thickness: 1px;
+  bg-color: rgba(0, 0, 0, 0.5);
+  text-color: #141414;
+  border-color: #141414;
+}
+
+desktop_inverted_white-btn {
+  max-width: 164px;
+  max-height: 53px;
+  border-radius: 20px;
+  border-thickness: 1px;
+  bg-color: rgba(0, 0, 0, 0.5);
+  text-color: #ffffff;
+  border-color: #ffffff;
+}
+
+desktop_pdp-btn {
+  max-width: 429px;
+  max-height: 46px;
+  border-radius: 20px;
+  border-thickness: 1px;
+  bg-color: #001e42;
+  text-color: #ffffff;
+}
+
+mobile_pdp-btn {
+  max-width: 638px;
+  max-height: 63px;
+  border-radius: 20px;
+  border-thickness: 1px;
+  bg-color: #001e42;
+  text-color: #ffffff;
+}
+
+email-btn {
+  max-width: 115px;
+  max-height: 52px;
+  bg-color: #001e42;
+  text-color: #ffffff;
+}
+
+cart_page-btn {
+  max-width: 374px;
+  max-height: 50px;
+  border-radius: 20px;
+  border-thickness: 1px;
+  bg-color: #001e42;
+  text-color: #ffffff;
+}
+
+cart_upsell-btn {
+  max-width: 110px;
+  max-height: 50px;
+  border-radius: 20px;
+  border-thickness: 1px;
+  bg-color: rgba(0, 0, 0, 0.5);
+  text-color: #ffffff;
+  border-color: #ffffff;
+}
