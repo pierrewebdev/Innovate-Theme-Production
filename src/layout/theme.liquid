@@ -39,6 +39,9 @@
     {{ 'base.css' | asset_url | stylesheet_tag }}
     {{ 'header.css' | asset_url | stylesheet_tag }}
 
+    <!--Styles from Sass-->
+    {{ "theme.css" | asset_url | stylesheet_tag }}
+
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
   </head>
   <body>
