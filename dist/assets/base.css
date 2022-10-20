@@ -163,66 +163,6 @@ details.overlay[open] > summary::before {
   overflow-y: auto;
 }
 
-/* Headings */
-
-.h0 {
-  font-size: 4rem;
-}
-
-h1, .h1 {
-  font-size: 3rem;
-}
-
-h2, .h2 {
-  font-size: 2rem;
-}
-
-h3, .h3 {
-  font-size: 1.7rem;
-}
-
-h4, .h4 {
-  font-size: 1.5rem;
-}
-
-h5, .h5 {
-  font-size: 1.2rem;
-}
-
-h6, .h6 {
-  font-size: 1rem;
-}
-
-@media only screen and (min-width: 750px) {
-  .h0 {
-    font-size: 5.2rem;
-  }
-
-  h1, .h1 {
-    font-size: 4rem;
-  }
-
-  h2, .h2 {
-    font-size: 2.4rem;
-  }
-
-  h3, .h3 {
-    font-size: 1.8rem;
-  }
-
-  h4, .h4 {
-    font-size: 1.7rem;
-  }
-
-  h5, .h5 {
-    font-size: 1.3rem;
-  }
-
-  h6, .h6 {
-    font-size: 1.2rem;
-  }
-}
-
 /* Buttons / Links  */
 
 a {

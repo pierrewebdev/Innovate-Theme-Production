@@ -40,6 +40,6 @@ gulp.task("theme-dist", async function(){
 
 gulp.task('default', function() {
     // this assumes your sass is in a directory named sass
-    gulp.watch(['./src/sass/**/*.scss', './src/javascript/**/*.js'], gulp.series(['buildStyles', 'babelConvert', 'theme-dist']));
+    gulp.watch(['./src/sass/**/*.scss', './src/javascript/**/*.js', './src/**/*.liquid'], gulp.series(['buildStyles', 'babelConvert', 'theme-dist']));
 });
 
